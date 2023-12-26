@@ -1,0 +1,45 @@
+----------------------DATABASE-----------------------
+<ADMIN>
+
+create table admin(
+username varchar( 100),
+email varchar(100),
+password varchar (100),
+)
+select * from admin
+
+
+<Products>
+create table product(
+name varchar (500),
+singlep int ,
+doublep int ,
+familyp int,
+path varchar (500),
+constraint pk_p primary key(name)
+)
+select * from product
+
+<ORDERS>
+
+CREATE TABLE orders (
+    order_date DATETIME,
+    order_id varchar(1000),
+    
+    bill varchar(1000),
+    CONSTRAINT pk_order_date PRIMARY KEY (order_date),
+    CONSTRAINT sk_order_id UNIQUE (order_id)
+);
+
+<ORDERS LIST>
+
+create table orders_list(
+order_id int,
+name varchar(500),
+detail varchar(500),
+quantity varchar(500),
+FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+
+)
+
+
